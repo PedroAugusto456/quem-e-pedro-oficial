@@ -6,100 +6,134 @@
     <title>Questionário - Quem é Pedro?</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <header>
         <h1>Você é um Pedro?</h1>
+        <button onclick="toggleRanking()" style="margin-top:10px;">
+            Ver Ranking Completo
+        </button>
     </header>
     
     <main>
         <form id="quizForm">
             <div class="container">
+
+                <!-- NOME -->
                 <div style="margin-bottom: 20px;">
                     <label for="nome_usuario"><strong>Seu Nome:</strong></label><br>
                     <input type="text" id="nome_usuario" placeholder="Digite seu nome para o ranking" required style="width: 100%; padding: 10px; margin-top: 5px;">
                 </div>
+
                 <hr>
 
+                <!-- PERGUNTAS -->
                 <p>1. Você já acordou e voltou a dormir só “por mais 5 minutinhos”?</p>
                 <label><input type="radio" name="resposta_1" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_1" value="0"> Não</label>
                 <hr>
+
                 <p>2. Esses 5 minutos viraram 1h ou mais?</p>
                 <label><input type="radio" name="resposta_2" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_2" value="0"> Não</label>
                 <hr>
+
                 <p>3. Você já abriu a geladeira sem estar com fome?</p>
                 <label><input type="radio" name="resposta_3" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_3" value="0"> Não</label>
                 <hr>
+
                 <p>4. Você já esqueceu o que ia fazer no meio do caminho?</p>
                 <label><input type="radio" name="resposta_4" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_4" value="0"> Não</label>
                 <hr>
+
                 <p>5. Você pega o celular “só pra ver uma coisa” e fica 1 hora?</p>
                 <label><input type="radio" name="resposta_5" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_5" value="0"> Não</label>
                 <hr>
+
                 <p>6. Você já entrou no Instagram e esqueceu o motivo?</p>
                 <label><input type="radio" name="resposta_6" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_6" value="0"> Não</label>
                 <hr>
+
                 <p>7. Você já ignorou uma ligação só porque deu preguiça?</p>
                 <label><input type="radio" name="resposta_7" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_7" value="0"> Não</label>
                 <hr>
+
                 <p>8. Você já comeu só porque estava entediado?</p>
                 <label><input type="radio" name="resposta_8" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_8" value="0"> Não</label>
                 <hr>
+
                 <p>9. Já falou “segunda eu começo” e nunca começou?</p>
                 <label><input type="radio" name="resposta_9" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_9" value="0"> Não</label>
                 <hr>
+
                 <p>10. Já deixou algo importante pra última hora?</p>
                 <label><input type="radio" name="resposta_10" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_10" value="0"> Não</label>
                 <hr>
+
                 <p>11. Já procurou algo que estava na sua mão?</p>
                 <label><input type="radio" name="resposta_11" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_11" value="0"> Não</label>
                 <hr>
+
                 <p>12. Já releu a mesma frase 3 vezes e não entendeu nada?</p>
                 <label><input type="radio" name="resposta_12" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_12" value="0"> Não</label>
                 <hr>
+
                 <p>13. Já entrou em um cômodo e esqueceu o que ia fazer? (de novo)</p>
                 <label><input type="radio" name="resposta_13" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_13" value="0"> Não</label>
                 <hr>
+
                 <p>14. Já riu de uma piada sem graça só pra não deixar a pessoa sem graça?</p>
                 <label><input type="radio" name="resposta_14" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_14" value="0"> Não</label>
                 <hr>
+
                 <p>15. Já respondeu “depois eu vejo isso” e nunca mais viu?</p>
                 <label><input type="radio" name="resposta_15" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_15" value="0"> Não</label>
                 <hr>
+
                 <p>16. Já fingiu que não viu alguém pra não conversar?</p>
                 <label><input type="radio" name="resposta_16" value="1"> Sim</label>
                 <label><input type="radio" name="resposta_16" value="0"> Não</label>
-                <hr>
 
                 <br><br>
+
+                <!-- BOTÕES -->
                 <button type="button" onclick="calcularResultado()">Ver Resultado</button>
                 <button type="button" onclick="window.location.reload()">Reiniciar</button>
-                
-                <div class="resultado" id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
-            
+
+                <!-- RESULTADO -->
+                <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+                <!-- RANKING -->
                 <div id="ranking-container" style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 20px;">
-                <h2>Top 5 "Pedros"</h2>
-                <div id="lista-ranking">Carregando...</div>
+    
+                    <h2>Top 5 "Pedros"</h2>
+                
+                    <button onclick="toggleRanking()" style="margin-bottom: 10px;">
+                        Ver Ranking Completo
+                    </button>
+                
+                    <div id="lista-ranking">Carregando...</div>
                 </div>
+
             </div>
         </form>
-        
     </main>
 
     <script type="module" src="script.js"></script>
+
 </body>
 </html>
